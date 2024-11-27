@@ -1,0 +1,144 @@
+@use 'colors' as *;
+@use 'fonts' as *;
+
+.journey{
+    position: relative;
+    &__wrap{
+        padding: 10.8rem 0;
+        gap: 2.4rem;
+    }
+    &__left{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 60rem;
+    }
+    &__header{
+        @extend %header-h2;
+        color: $light;
+        margin-bottom: 0.8rem;
+    }
+    &__subheader{
+        @extend %header-h2;
+        color: $green;
+        margin-bottom: 6.4rem;
+    }
+    &__box{
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        gap: 3.6rem;
+        width: 100%;
+        background-color: $green-bg;
+        overflow: hidden;
+        position: relative;
+        &::before{
+            content: '';
+            width: 11rem;
+            height: 100%;
+            position: absolute;
+            background: $green;
+            transform: skewX(-10deg);
+            left: -1rem;
+            top: 0;
+            z-index: 0;
+        }
+        &:last-child{
+            background-color: $orange-bg;
+            &::before{
+                background: $orange;
+            }
+            .journey__text{
+                color: $orange;
+            }
+        }
+    }
+    &__point{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: .2rem;
+        padding: 2.4rem 2rem;
+        
+    }
+    &__step{
+        @extend %caption-2;
+        color: $black;
+    }
+    &__num{
+        @extend %numbers;
+        color: $black;
+    }
+    &__text{
+        @extend %subtitle-1;
+        color: $green;
+    }
+    &__right{
+        position: relative;
+        width: 100%;
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url("./images/akd-d-journey-gradi.svg") no-repeat center center/contain;
+            z-index: -1;
+            opacity: 0.25;
+            filter: blur(20px);
+            transform: translate3d(0, 0, 0);
+            will-change: tramsform;
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .journey{
+        &__header, &__subheader{
+            text-align: center;
+        }
+        &__subheader{
+            
+        }
+    }
+}
+
+@media (max-width: 968px) {
+    .journey{
+        &__item{
+            &::before{
+                width: 9rem;
+            }
+        }
+        &__wrap{
+            padding: 6rem 0;
+        }
+        &__header, &__subheader{
+            font-size: 3rem;
+        }
+    }
+}
+@media (max-width:700px) {
+    .journey{
+        &__header, &__subheader{
+            font-size: 2.6rem;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .journey{
+        &__wrap{
+            flex-direction: column;
+            gap: 2.4rem;
+        }
+        &__right{
+            height: 50rem;
+        }
+    }
+}

@@ -1,0 +1,164 @@
+@use "colors" as *;
+@use "fonts" as *;
+
+.model{
+    position: relative;
+    overflow: hidden;
+    &::before{
+        content: '';
+        position: absolute;
+        left: -28rem;
+        top: 50%;
+        max-width: 67rem;
+        max-height: 49rem;
+        width: 100%;
+        height: 100%;
+        background: url("./images/akd-d-model-gradi-1.svg") no-repeat center center/contain;
+        z-index: -1;
+        opacity: 0.25;
+        filter: blur(20px);
+        transform: translate3d(0, 0, 0) translateY(-50%);
+        will-change: tramsform;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        right: -28rem;
+        top: 50%;
+        max-width: 67rem;
+        max-height: 49rem;
+        width: 100%;
+        height: 100%;
+        background: url("./images/akd-d-model-gradi-2.svg") no-repeat center center/contain;
+        z-index: -2;
+        opacity: 0.25;
+        filter: blur(20px);
+        transform: translate3d(0, 0, 0) translateY(-50%);
+        will-change: tramsform;
+    }
+    &__wrap{
+        padding: 10.8rem 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 6.4rem;
+    }
+    &__header{
+        @extend %header-h2
+    }
+    &__box{
+        display: flex;
+        gap: 2.4rem;
+    }
+    &__item{
+        position: relative;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        overflow: hidden;
+        justify-content: space-between;
+        background: transparent;
+        &:last-child{
+            .model__title{
+                color: $orange;
+            }
+            .model__bot{
+                background-color: $orange;
+            }
+            &::before{
+                background: $orange-bg;
+            }
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            background: $green-bg;
+            transform: rotate(35deg);
+            z-index: -1;
+            top: -20rem;
+            left: -31px;
+        }
+    }
+    &__top{
+        display: flex;
+        flex-direction: column;
+        padding: 4rem 2.4rem;
+    }
+    &__title{
+        @extend %header-h3;
+        color: $green;
+        text-align: center;
+        margin-bottom: 3.2rem;
+    }
+    &__subtitle{
+        @extend %body-1;
+        color: $light;
+        margin-bottom: 4rem;
+    }
+    &__ul{
+        list-style-type: disc;
+        margin-left: 2rem;
+    }
+    &__li{
+        @extend %body-2;
+        color: $light;
+        margin-bottom: 1rem;
+    }
+    &__bot{
+        background-color: $green;
+        padding: 1.6rem 2.4rem;
+    }
+    &__slogan{
+        @extend %subtitle-2;
+        color: $black;
+        text-align: center;
+    }
+}
+
+@media (max-width: 968px){
+    .model{
+        &__box{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        &__item{
+            &::before{
+                top: -10rem;
+            }
+        }
+        &__top{
+            padding: 2.4rem 2rem;
+        }
+        &__title{
+            margin-bottom: 2rem;
+        }
+        &__subtitle{
+            margin-bottom: 2rem;
+        }
+        &__wrap{
+            padding: 6rem 0;
+        }
+    }
+    
+}
+
+@media (max-width: 500px) {
+    .model{
+        &__box{
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+        &__header{
+            text-align: center;
+        }
+        &__wrap{
+            gap: 4rem;
+        }
+        &__item{
+            &::before{
+                max-width: initial;
+            }
+        }
+    }
+}

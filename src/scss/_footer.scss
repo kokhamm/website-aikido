@@ -1,0 +1,79 @@
+@use 'colors' as *;
+@use 'fonts' as *;
+
+
+.footer{
+    &__wrap{
+        padding: 6.4rem 0;
+        gap: 10.7rem;
+    }
+    &__right{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        gap: 2.4rem;
+    }
+    &__left{
+        display: flex;
+    }
+    &__box{
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+        flex: 1;
+    }
+    &__com{
+        color: $green;
+        @extend %subtitle-2
+    }
+    &__nav{
+        display: flex;
+        gap: 1.6rem;
+        flex-direction: column;
+    }
+    &__socials{
+        display: flex;
+        gap: 2.4rem;
+    }
+    &__frame{
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+    &__cop, &__pri{
+        font-family: "Aldrich", sans-serif;
+        font-size: 1.2rem;
+        line-height: 1.6rem; 
+        color: $grey;
+    }
+    &__pri{
+        text-decoration: underline;
+    }
+}
+
+@media (max-width: 968px) {
+    .footer{
+        &__right{
+            flex-wrap: wrap;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .footer{
+        &__wrap{
+            flex-direction: column;
+            align-items: center;
+            gap: 6.4rem;
+        }
+        &__right{
+            flex-direction: column;
+            align-items: center;
+            gap: 6.4rem;
+            text-align: center;
+        }
+        &__frame{
+            margin-top: 4.4rem;
+        }
+    }
+}

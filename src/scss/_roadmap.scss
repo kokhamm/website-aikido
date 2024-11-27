@@ -1,0 +1,166 @@
+@use "colors" as *;
+@use "fonts" as *;
+
+.roadmap{
+    &__wrap{
+        padding: 10.8rem 0;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__header{
+        @extend %header-h2;
+        color: $light;
+        margin-bottom: .8rem;
+    }
+    &__subheader{
+        @extend %header-h2;
+        color: $green;
+        margin-bottom: 6.4rem;
+    }
+    &__box{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 3.2rem;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        background-color: $green-bg;
+        &::before{
+            content: '';
+            width: 28.8rem;
+            height: 100%;
+            position: absolute;
+            background: $green;
+            transform: skewX(-10deg);
+            left: -2rem;
+            top: 0;
+            z-index: 0;
+        }
+        &:last-child{
+            background-color: $orange-bg;
+            &::before{
+                background: $orange;
+            }
+            .roadmap__hedi{
+                color: $orange;
+            }
+            .roadmap__sticker{
+                border-color: $orange;
+            }
+        }
+    }
+    &__left{
+        display: flex;
+        flex-direction: column;
+        gap: .6rem;
+        padding: 7.3rem 6.8rem 7.3rem 3.2rem;
+        width: 100%;
+        max-width: 28.8rem;
+        position: relative;
+        z-index: 1;
+    }
+    &__jap{
+        @extend %caption-2;
+        color: $black;
+    }
+    &__epo{
+        @extend %numbers;
+        color: $black;
+    }
+    &__right{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+    &__hedi{
+        @extend %header-h3;
+        color: $green;
+    }
+    &__stickers{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 2rem;
+    }
+    &__sticker{
+        display: inline-flex;
+        width: fit-content;
+        padding: 0.4rem 0.8rem;
+        text-align: center;
+        border: 1px solid $green;
+    }
+}
+
+@media (max-width: 968px) {
+    .roadmap{
+        &__left{
+            max-width: 19.6rem;
+            padding: 6.4rem 2.3rem 6.4rem 2.2rem;
+        }
+        &__item{
+            gap: 2rem;
+            &::before{
+                max-width: 19.6rem;
+            }
+        }
+        &__stickers{
+            gap: 1.2rem;
+        }
+        &__right{
+            padding: 2rem 0;
+        }
+        &__wrap{
+            padding: 6rem 0;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .roadmap{
+        &__header, &__subheader{
+            text-align: center;
+        }
+        &__item{
+            flex-direction: column;
+            overflow: visible;
+            gap: 0;
+            &::before{
+                width: 5.5rem;
+                height: 7rem;
+                background: $black;
+                z-index: 2;
+                transform: rotate(35deg);
+                top: -2.5rem;
+                left: -3.5rem;
+            }
+            &:last-child{
+                &::before{
+                    background: $black;
+                }
+                .roadmap__left{
+                    background-color: $orange;
+                }
+            }
+        }
+        &__left{
+            padding: 1.6rem 2.4rem;
+            background-color: $green;
+            max-width: 100%;
+            text-align: center;
+        }
+        &__right{
+            align-items: center;
+            padding: 2.8rem 0;
+        }
+        &__stickers{
+            justify-content: center;
+            padding: 0 1.2rem;
+        }
+    }
+}

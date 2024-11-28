@@ -6,6 +6,7 @@
     &__wrap{
         padding: 10.8rem 0;
         gap: 2.4rem;
+        justify-content: space-between;
     }
     &__left{
         display: flex;
@@ -80,19 +81,24 @@
     &__right{
         position: relative;
         width: 100%;
-        &::before{
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
+        text-align: center;
+        // &::before{
+        //     content: '';
+        //     position: absolute;
+        //     left: 0;
+        //     top: 0;
+        //     width: 100%;
+        //     height: 100%;
+        //     background: url("./images/akd-d-journey-gradi.svg") no-repeat center center/contain;
+        //     z-index: -1;
+        //     opacity: 0.25;
+        //     filter: blur(20px);
+        //     transform: translate3d(0, 0, 0);
+        //     will-change: tramsform;
+        // }
+        video{
             height: 100%;
-            background: url("./images/akd-d-journey-gradi.svg") no-repeat center center/contain;
-            z-index: -1;
-            opacity: 0.25;
-            filter: blur(20px);
-            transform: translate3d(0, 0, 0);
-            will-change: tramsform;
+            object-fit: cover;
         }
     }
 }

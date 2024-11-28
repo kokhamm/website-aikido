@@ -116,7 +116,7 @@ export function initVariables(){
     });
     
     emailButton.addEventListener('click', () => {
-        navigator.clipboard.writeText('Pornhub').then(() => {
+        navigator.clipboard.writeText('theaikido.io@gmail.com').then(() => {
             console.log('Email copied to clipboard');
         }).catch(err => {
             console.error('Could not copy text: ', err);

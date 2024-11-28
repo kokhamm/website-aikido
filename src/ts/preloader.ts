@@ -4,6 +4,7 @@ import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 
 
 export function initPreloader() {
+    console.log('Preloader');
     gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
     document.body.classList.add('stopper');
     
@@ -11,8 +12,6 @@ export function initPreloader() {
     let clickCounter = 0;
     const bar = document.querySelector('.preloader__bar') as HTMLElement;
     const spans = document.querySelectorAll('.preloader__clip') as NodeListOf<HTMLElement>;
-    const preloaderRightBefore = CSSRulePlugin.getRule(".preloader__right::before");
-    const preloaderBefore = CSSRulePlugin.getRule(".preloader::before");
     let viewPort = window.innerWidth;
     const tl = gsap.timeline({});
 
@@ -84,21 +83,14 @@ export function initPreloader() {
                         'right': '0',
                         duration: 1,
                         onComplete: () =>{
-                            gsap.to(preloaderBefore, {
-                                opacity: 0,
-                                duration: 1,
-                                onComplete: () =>{
-                                    document.body.classList.remove('stopper');
-                                    let preloader = document.querySelector('.preloader') as HTMLElement;
-                                    preloader.style.position = 'absolute';
-                                    preloader.style.zIndex = '90';
-                                },
-                            });
+                            document.body.classList.remove('stopper');
+                            let preloader = document.querySelector('.preloader') as HTMLElement;
+                            preloader.classList.add('hidenow');
+                            preloader.style.position = 'absolute';
+                            preloader.style.zIndex = '90';
                         },
                     });
-                    gsap.to(preloaderRightBefore,{
-                        opacity: 0,
-                    });
+
                     if (viewPort > 1100){
                         gsap.to('.preloader__right img',{
                             'max-width': '27rem',

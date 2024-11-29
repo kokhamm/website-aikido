@@ -7,13 +7,13 @@
         content: '';
         position: absolute;
         left: -32.8rem;
-        top: -24rem;
+        top: -10rem;
         max-width: 67rem;
         height: 49rem;
         width: 100%;
         background: url("./images/akd-d-mission-gradi.svg") no-repeat center center/contain;
         z-index: -1;
-        opacity: 0.25;
+        opacity: 0.15;
         filter: blur(20px);
         transform: translate3d(0, 0, 0);
         will-change: tramsform;
@@ -30,9 +30,8 @@
       }
     &__cursor{
         animation: cursorBlink 0.5s alternate infinite;
-        font-size: 4rem;
+        font-size: 3.2rem;
         width: fit-content;
-        line-height: 4rem;
         
     }
     &__margin{
@@ -44,6 +43,9 @@
     .mission{
         &__margin{
             margin-bottom: 10rem;
+        }
+        &__cursor{
+            font-size: 2.2rem;
         }
     }
 }

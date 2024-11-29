@@ -83,12 +83,12 @@ export function initVariables(){
     tlCore.from('.aka__core', {
         y: 200,
         opacity: 0,
-        duration: 1,
+        duration: 0.5,
         scrub: true,
     });
     tlCore.from('.aka__paralellogram', {
         opacity: 0,
-        duration: 1,
+        duration: 0.5,
         scrub: true,
     });
     tlCore.from('.aka__mid', {

@@ -3,9 +3,11 @@
 
 
 .footer{
+    border-top: 1px solid rgba(45, 183, 174, 0.50);
     &__wrap{
         padding: 6.4rem 0;
         gap: 10.7rem;
+        align-items: flex-start;
     }
     &__right{
         display: flex;
@@ -84,6 +86,7 @@
 
 @media (max-width: 668px) {
     .footer{
+        margin-top: 5rem;
         &__right{
             flex-wrap: wrap;
         }

@@ -145,3 +145,14 @@
         }
     }
 }
+
+@media (max-width: 500px) {
+    .book{
+        &__tg{
+            font-size: 2.6rem;
+        }
+        &__button{
+            font-size: 2.6rem;
+        }
+    }
+}

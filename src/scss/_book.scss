@@ -7,6 +7,7 @@
         padding-bottom: 21.6rem;
         gap: 2.4rem;
         max-height: 100rem;
+        align-items: center;
     }
     &__left{
         display: flex;
@@ -16,6 +17,7 @@
     }
     &__right{
         flex: 1;
+        padding: 2rem;
         border: 1px solid $green;
         position: relative;
         // overflow: hidden;
@@ -54,6 +56,10 @@
     }
     &__tg{
         color: $green-bg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.1rem;
         @extend %button-xl;
         position: relative;
         padding: 2.4rem 3.2rem;
@@ -110,6 +116,9 @@
             &::before{
                 background-position-y: 0;
             }
+            svg path{
+                fill: $black;
+            }
         }
         &.copied{
             &::before{
@@ -121,6 +130,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            gap: 1.1rem;
         }
     }
 }
@@ -141,7 +151,7 @@
         }
         &__right{
             width: 100%;
-            min-height: 51.2rem;
+            min-height: 57.2rem;
         }
     }
 }
@@ -149,10 +159,10 @@
 @media (max-width: 500px) {
     .book{
         &__tg{
-            font-size: 2.6rem;
+            font-size: 2.4rem;
         }
         &__button{
-            font-size: 2.6rem;
+            font-size: 2.4rem;
         }
     }
 }

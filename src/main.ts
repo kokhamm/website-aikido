@@ -6,6 +6,7 @@ import { initPreloader } from './ts/preloader';
 import { notPreloader } from './ts/notPreloader';
 import { initMission } from './ts/mission';
 import { initVariables } from './ts/variables';
+import { initCounter } from './ts/counter';
 
 document.addEventListener('DOMContentLoaded', function() {
     initSwiper();
@@ -18,5 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
     };
     initMission();
     initVariables();
+    initCounter();
 });
 

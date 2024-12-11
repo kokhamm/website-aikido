@@ -136,7 +136,7 @@ export function initVariables(){
                     duration: 0.1,
                     delay: 0.5,
                     onComplete: () => {
-                        emailButtonSpan.innerHTML = 'Connect via email';
+                        emailButtonSpan.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none"><path d="M32.5 13.3333L19.8333 21.25L7.16667 13.3333V10.1667L19.8333 18.0833L32.5 10.1667M32.5 7H7.16667C5.40917 7 4 8.40917 4 10.1667V29.1667C4 30.0065 4.33363 30.812 4.9275 31.4058C5.52136 31.9997 6.32681 32.3333 7.16667 32.3333H32.5C33.3399 32.3333 34.1453 31.9997 34.7392 31.4058C35.333 30.812 35.6667 30.0065 35.6667 29.1667V10.1667C35.6667 9.32681 35.333 8.52136 34.7392 7.9275C34.1453 7.33363 33.3399 7 32.5 7Z" fill="#E7FBF8"/></svg>Connect via email';
                         gsap.to(emailButtonSpan, {
                             opacity: 1,
                             duration: 0.5,

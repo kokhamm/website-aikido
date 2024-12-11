@@ -1,5 +1,5 @@
 import Swiper from "swiper";
-import { Autoplay } from 'swiper/modules';// import Swiper styles
+import { Autoplay } from 'swiper/modules';
 import "swiper/swiper-bundle.css";
 
 export function initSwiper(){
@@ -7,14 +7,15 @@ export function initSwiper(){
         modules: [Autoplay],
         spaceBetween: 40,
         centeredSlides: true,
-        speed: 4000,
-        autoplay: {
-            delay: 1,
-            disableOnInteraction: true,
-        },
+        speed: 3000,
         loop: true,
         slidesPerView:'auto',
         allowTouchMove: false,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: true,
+        },
     });
     console.log(heroSwiper);
+    
 };

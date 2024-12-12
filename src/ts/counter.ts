@@ -3,11 +3,12 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 
 export function initCounter(){
-    gsap.registerPlugin(ScrollTrigger);
+    window.onload = ()=>{
+        gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.refresh();
     let counters = document.querySelectorAll('.counter') as NodeListOf<HTMLElement>;
+    let elHeight = counters[0].clientHeight;
     counters.forEach(el=>{
-        let elHeight = el.clientHeight;
         let elContent = el.innerHTML;
         el.innerHTML = '';
         el.style.display = 'flex';
@@ -34,7 +35,7 @@ export function initCounter(){
                 span.style.minHeight = elHeight + 'px';
                 num.appendChild(span);
                 gsap.fromTo(span, {
-                    'tramform': 'translateY(100%)'
+                    'transform': 'translateY(0%)'
                 },{
                     'transform': 'translateY(-' + ( 100 * nums[i]) + '%)',
                     scrollTrigger:{
@@ -52,4 +53,7 @@ export function initCounter(){
         otherPart.innerHTML = numsOther.join('');
         el.appendChild(otherPart);
     });
+    };
+
+    
 }

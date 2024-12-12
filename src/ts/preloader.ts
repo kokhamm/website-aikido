@@ -5,7 +5,8 @@ import { CSSRulePlugin } from "gsap/CSSRulePlugin";
 
 export function initPreloader() {
     console.log('Preloader');
-    gsap.registerPlugin(CSSRulePlugin, ScrollTrigger);
+    gsap.registerPlugin(CSSRulePlugin);
+    gsap.registerPlugin(ScrollTrigger);
     document.body.classList.add('stopper');
     
     const pClick = document.querySelector('.preloader__click') as HTMLElement;

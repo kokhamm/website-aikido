@@ -4,6 +4,7 @@ import {ScrollTrigger} from 'gsap/ScrollTrigger';
 
 export function initVariables(){
     gsap.registerPlugin(ScrollTrigger);
+
     const gsapNumsElements = gsap.utils.toArray('.gsap-nums') as HTMLElement[];
     const gsapModelsElements = gsap.utils.toArray('.gsap-models') as HTMLElement[];
     const gsapHeader1Elements = gsap.utils.toArray('.gsap-header1') as HTMLElement[];
@@ -84,17 +85,17 @@ export function initVariables(){
         y: 200,
         opacity: 0,
         duration: 0.5,
-        scrub: true,
+
     });
     tlCore.from('.aka__paralellogram', {
         opacity: 0,
         duration: 0.5,
-        scrub: true,
+
     });
     tlCore.from('.aka__mid', {
         opacity: 0,
         duration: 0.5,
-        scrub: true,
+
     });
 
     ScrollTrigger.create({
@@ -107,11 +108,9 @@ export function initVariables(){
     gsap.from('.gsap-header-sm', {
         opacity: 0,
         duration: 1,
-        scrub: true,
         scrollTrigger: {
             trigger: '.gsap-header-sm',
             start: "top 80%",
-
         }
     });
     

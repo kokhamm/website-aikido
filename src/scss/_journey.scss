@@ -80,7 +80,8 @@
     }
     &__right{
         position: relative;
-        width: 100%;
+        max-width: 60rem;
+        width: 50%;
         text-align: center;
         // &::before{
         //     content: '';
@@ -97,8 +98,10 @@
         //     will-change: tramsform;
         // }
         video{
-            height: 100%;
+            width: 100%;
+            max-width: 37rem;
             object-fit: cover;
+            border-radius: 6rem;
         }
     }
 }
@@ -107,9 +110,6 @@
     .journey{
         &__header, &__subheader{
             text-align: center;
-        }
-        &__subheader{
-            
         }
     }
 }
@@ -127,6 +127,9 @@
         &__header, &__subheader{
             font-size: 3rem;
         }
+        &__right{
+            width: 100%;
+        }
     }
 }
 @media (max-width:700px) {
@@ -142,9 +145,6 @@
         &__wrap{
             flex-direction: column;
             gap: 2.4rem;
-        }
-        &__right{
-            height: 50rem;
         }
         &__item{
             gap: 4.6rem;

@@ -1,7 +1,7 @@
 import './_style.scss';  
 
-import { initSwiper} from './ts/swiper';
-import {initHeader} from './ts/header';
+import { initSwiper } from './ts/swiper';
+import { initHeader } from './ts/header';
 import { initPreloader } from './ts/preloader';
 import { notPreloader } from './ts/notPreloader';
 import { initMission } from './ts/mission';
@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
         notPreloader();
     };
     initMission();
-    initVariables();
     initCounter();
+    initVariables();
+    
 });
 

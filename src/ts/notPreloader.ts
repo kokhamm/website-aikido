@@ -10,15 +10,15 @@ export function notPreloader(){
     preloaderLeft.style.display = 'none';
     let preloaderRight = document.querySelector('.preloader__right') as HTMLElement;
     let viewPort = window.innerWidth;
-    preloaderRight.style.transform = viewPort > 501 ? 'translateY(25%)' : 'translateY(170%)';
+    preloaderRight.style.transform = viewPort > 501 ? 'translateY(25%)' : 'translateY(32rem)';
     preloaderRight.style.right = '0';
     let preloaderRightImg = document.querySelector('.preloader__right img') as HTMLElement;
     if (viewPort > 1100) {
         preloaderRightImg.style.maxWidth = '27rem';
         preloaderRightImg.style.transition = 'max-width 2s';
-    } else if (viewPort < 1100 && viewPort > 800) {
+    } else if (viewPort <= 1100 && viewPort > 800) {
         preloaderRightImg.style.maxWidth = '17rem';
         preloaderRightImg.style.transition = 'max-width 2s';
+        
     };
-
 };

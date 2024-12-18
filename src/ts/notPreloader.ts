@@ -19,6 +19,7 @@ export function notPreloader(){
     } else if (viewPort <= 1100 && viewPort > 800) {
         preloaderRightImg.style.maxWidth = '17rem';
         preloaderRightImg.style.transition = 'max-width 2s';
-        
+    } else if (viewPort <= 600) {
+        preloaderRight.style.top = '40%';
     };
 };

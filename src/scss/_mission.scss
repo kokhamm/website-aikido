@@ -1,0 +1,63 @@
+@use 'colors' as *;
+@use 'fonts' as *;
+
+.mission{
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        left: -32.8rem;
+        top: -10rem;
+        max-width: 67rem;
+        height: 49rem;
+        width: 100%;
+        background: url("./images/akd-d-mission-gradi.svg") no-repeat center center/contain;
+        z-index: -1;
+        opacity: 0.15;
+        filter: blur(20px);
+        transform: translate3d(0, 0, 0);
+        will-change: tramsform;
+    }
+    &__wrap{
+        padding-top: 20.1rem;
+        flex-direction: column;
+        @extend %subtitle-1;
+        color: $light;
+    }
+    @keyframes cursorBlink {
+        from {opacity: 0;}
+        to {opacity: 100%;}
+      }
+    &__cursor{
+        animation: cursorBlink 0.5s alternate infinite;
+        font-size: 3.2rem;
+        width: fit-content;
+        
+    }
+    &__margin{
+        margin-bottom: 20rem;
+    }
+}
+
+@media (max-width: 1100px) {
+    .mission{
+        &__margin{
+            margin-bottom: 10rem;
+        }
+        &__cursor{
+            font-size: 2.2rem;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .mission{
+        &__wrap{
+            padding-top: 10.1rem;
+        }
+        &__margin{
+            margin-bottom: 20rem;
+        }
+    }
+    
+}

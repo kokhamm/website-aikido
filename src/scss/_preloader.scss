@@ -1,0 +1,159 @@
+@use "colors" as *;
+@use "fonts" as *;
+
+.preloader{
+    position: fixed;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100%;
+    z-index: 999999;
+    max-width: 100vw;
+    // overflow-x: hidden;
+    &.hidenow{
+        &::before{
+            opacity: 0;
+            pointer-events: none;
+        }
+        .preloader__right{
+            &::before{
+                opacity: 0;
+            }
+        }
+    }
+    &.notPreloader{
+
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $black;
+        z-index: -1;
+        transition: 2s;
+    }
+    &__wrap{
+        display: flex;
+        align-items: center;
+        gap: 20rem;
+        height: 100%;
+        min-height: 100dvh;
+        position: relative;
+    }
+    &__left{
+        max-width: 44%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem
+    }
+    &__clip{
+        @extend %subtitle-1;
+        color: $light;
+        display: block;
+    }
+    &__green{
+        color: $green;
+    }
+    &__monitor{
+        height: 13.43rem;
+        overflow: hidden;
+    }
+    &__right{
+        position: absolute;
+        right: 0;
+        display: flex;
+        max-width: fit-content;
+        img{
+            max-width: 32rem;
+            max-height: 100%;
+            height: auto;
+            width: auto;
+        }
+        &::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 45.8rem;
+            height: 52.3rem;
+            background: url('./images/akd-d-hero-gradi-2.svg') no-repeat center center/contain;
+            z-index: -1;
+            transform: translate3d(0, 0, 0);
+            opacity: 0.12;
+            transition: 1s;
+        }
+    }
+    &__bar{
+        width: 97%;
+        height: 1.6rem;
+        background: linear-gradient(90deg,$orange 50%,$orange-bg 0);
+        background-size: 200% 100%;
+        background-position-x: 100%;
+        transform: skewX(-15deg);
+    }
+    &__click{
+        color: $light;
+        cursor: pointer;
+        pointer-events: none;
+        opacity: 0;
+        font-family: "Fugaz One";
+        font-size: 1.6rem;
+        font-weight: 400;
+        line-height: 2.4rem;
+        text-transform: uppercase;
+        text-align: center;
+        padding: 1rem 2.4rem;
+        position: relative;
+        &::before{
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid $orange;
+            box-sizing: border-box;
+            transform: skewX(-10deg);
+            transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .preloader{
+        &__right{
+            max-width: 30%;
+            img{
+                max-width: 19rem;
+            }
+            &::before{
+                width: 19.8rem;
+                height: 26.6rem;
+            }
+        }
+        &__monitor{
+            height: 8.4rem;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .preloader{
+        &__left{
+            max-width: 100%;
+            margin-top: 10rem;
+        }
+        &__wrap{
+            align-items: flex-start;
+        }
+        &__right{
+            right: 50%;
+            max-width: 50%;
+            top: 40%;
+            transform: translate(50%, 0%);
+        }
+    }
+}

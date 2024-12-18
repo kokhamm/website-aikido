@@ -1,0 +1,190 @@
+@use 'colors' as *;
+@use 'fonts' as *;
+
+.journey{
+    position: relative;
+    &__wrap{
+        padding: 10.8rem 0;
+        gap: 5.4rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__left{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 60rem;
+        justify-content: center;
+    }
+    &__pack{
+        display: flex;
+        gap: 10.8rem
+    }
+    &__header{
+        @extend %header-h2;
+        color: $light;
+        margin-bottom: 0.8rem;
+    }
+    &__subheader{
+        @extend %header-h2;
+        color: $green;
+    }
+    &__box{
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem;
+    }
+    &__item{
+        display: flex;
+        align-items: center;
+        gap: 3.6rem;
+        width: 100%;
+        background-color: $green-bg;
+        overflow: hidden;
+        position: relative;
+        &::before{
+            content: '';
+            width: 11rem;
+            height: 100%;
+            position: absolute;
+            background: $green;
+            transform: skewX(-10deg);
+            left: -1rem;
+            top: 0;
+            z-index: 0;
+        }
+        &:last-child{
+            background-color: $orange-bg;
+            &::before{
+                background: $orange;
+            }
+            .journey__text{
+                color: $orange;
+            }
+        }
+    }
+    &__point{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: .2rem;
+        padding: 1.6rem 2rem;
+        
+    }
+    &__step{
+        @extend %caption-2;
+        color: $black;
+    }
+    &__num{
+        font-family: 'Aldrich', sans-serif;
+        font-size: 3.2rem;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: $black;
+    }
+    &__text{
+        font-family: 'Aldrich', sans-serif;
+        font-size: 2.6rem;
+        font-weight: 400;
+        line-height: 140%;
+        text-transform: uppercase;
+        color: $green;
+    }
+    &__right{
+        position: relative;
+        max-width: 60rem;
+        width: 50%;
+        text-align: center;
+        // &::before{
+        //     content: '';
+        //     position: absolute;
+        //     left: 0;
+        //     top: 0;
+        //     width: 100%;
+        //     height: 100%;
+        //     background: url("./images/akd-d-journey-gradi.svg") no-repeat center center/contain;
+        //     z-index: -1;
+        //     opacity: 0.25;
+        //     filter: blur(20px);
+        //     transform: translate3d(0, 0, 0);
+        //     will-change: tramsform;
+        // }
+        video{
+            width: 100%;
+            max-width: 37rem;
+            object-fit: cover;
+            border-radius: 6rem;
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .journey{
+        &__header, &__subheader{
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 968px) {
+    .journey{
+        &__item{
+            &::before{
+                width: 9rem;
+            }
+        }
+        &__wrap{
+            padding: 6rem 0;
+        }
+        &__header, &__subheader{
+            font-size: 3rem;
+        }
+        &__right{
+            width: 100%;
+        }
+        &__pack{
+            gap: 1.4rem;
+        }
+        &__box{
+            gap: 2.6rem;
+        }
+        &__item{
+            gap: 2.6rem;
+            padding-right: 1rem;
+        }
+        &__point{
+            padding: 2.6rem 2rem;
+        }
+        &__text{
+            font-weight: 2.3rem;
+        }
+        &__right video{
+            max-width: 30rem;
+        }
+    }
+}
+@media (max-width:700px) {
+    .journey{
+        &__header, &__subheader{
+            font-size: 2.6rem;
+        }
+        &__pack{
+            flex-direction: column;
+            gap: 4.6rem;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .journey{
+        &__wrap{
+            flex-direction: column;
+            gap: 2.4rem;
+        }
+        &__item{
+            gap: 4.6rem;
+        }
+    }
+}

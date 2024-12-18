@@ -1,0 +1,153 @@
+@use 'colors' as *;
+@use 'fonts' as *;
+
+
+
+.hero{
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        right: 5.6%;
+        top: 11.9rem - 12.4rem;
+        max-width: 54rem;
+        max-height: 60.9rem;
+        width: 100%;
+        height: 100%;
+        background: url("./images/akd-d-hero-gradi-2.svg") no-repeat center center/contain;
+        z-index: -1;
+        opacity: 0.25;
+        filter: blur(20px);
+        transform: translate3d(0, 0, 0);
+        will-change: tramsform;
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        right: 16.5%;
+        top: 54.5rem - 12.4rem;
+        max-width: 44.6rem;
+        max-height: 23.3rem;
+        width: 100%;
+        height: 100%;
+        background: url("./images/akd-d-hero-gradi-1.svg") no-repeat center center/contain;
+        z-index: -1;
+        opacity: 0.25;
+        filter: blur(20px);
+        transform: translate3d(0, 0, 0);
+        will-change: tramsform;
+    }
+    &__wrap{
+        height: 70vh;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 2.4rem;
+    }
+
+    &__left{
+        display: flex;
+        flex-direction: column;
+        max-width: 70.4rem;
+        margin-top: 25rem;
+    }
+    &__slider{
+        width: 100%;
+    }
+    &__slider.swiper{
+        .swiper-wrapper{
+            transition-timing-function: linear !important;
+            position: relative;
+            .swiper-slide{
+                width: fit-content;
+                display: flex;
+                // box-sizing: border-box;
+            }
+        }
+    }
+    &__box{
+        width: 100%;
+    }
+    &__header{
+        @extend %header-h1;
+        color: $green;
+        margin-bottom: 1.2rem;
+    }
+    &__subheader{
+        color: $light;
+        @extend %subtitle-1;
+        max-width: 90%;
+        margin-bottom: 6.4rem;
+    }
+    &__right{
+        display: flex;
+        width: 100%; // or any specific width
+        height: 100%;
+        max-height: 56rem;
+        margin-top: 25rem;
+        img{
+            max-width: 100%;
+            max-height: 100%;
+            width: auto; // maintain aspect ratio
+            height: auto;
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .hero{
+        &__left{
+            max-width: 50%;
+        }
+        &::before{
+            top: 13.4rem - 9.2rem;
+            max-width: 26rem;
+            max-height: 33rem;
+        }
+        &::after{
+            max-width: 27rem;
+            max-height: 10rem;
+        }
+        &__wrap{
+            max-height: 55vh;
+            gap: 4rem;
+        }
+        &__right{
+            justify-content: center;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .hero{
+        &__right{
+            max-height: 45rem;
+            justify-content: flex-start;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .hero{
+        &::before{
+            display: none;
+        }
+        &__wrap{
+            flex-direction: column;
+            max-height: 100%;
+            padding-top: 2.8rem;
+            height: 100%;
+            align-items: flex-start;
+        }
+        &__left{
+            margin-top: 10rem;
+            max-width: 100%;
+        }
+        &__subheader{
+            margin-bottom: 4.8rem;
+        }
+        &__right{
+            max-width: 23rem;
+            margin-top: 0;
+        }
+    }
+}

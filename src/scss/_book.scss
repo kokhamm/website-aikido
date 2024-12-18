@@ -1,0 +1,168 @@
+@use "colors" as *;
+@use "fonts" as *;
+
+.book{
+    &__wrap{
+        padding: 10.8rem 0;
+        padding-bottom: 21.6rem;
+        gap: 2.4rem;
+        max-height: 100rem;
+        align-items: center;
+    }
+    &__left{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: center;
+    }
+    &__right{
+        flex: 1;
+        padding: 2rem;
+        border: 1px solid $green;
+        position: relative;
+        // overflow: hidden;
+        box-sizing: border-box;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4rem;
+            height: 8rem;
+            background-color: $black;
+            border-right: 1px solid $green;
+            z-index: 1;
+            transform: translate(-2.21rem, -1.3rem) rotate(25.2deg);
+        }
+    }
+    &__header{
+        @extend %header-h2;
+        color: $light;
+        text-align: center;
+        margin-bottom: .8rem
+    }
+    &__subheader{
+        @extend %header-h2;
+        color: $green;
+        text-align: center;
+        margin-bottom: 11.9rem;
+    }
+    &__box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.4rem;
+        width: 100%;
+    }
+    &__tg{
+        color: $green-bg;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.1rem;
+        @extend %button-xl;
+        position: relative;
+        padding: 2.4rem 3.2rem;
+        width: 100%;
+        text-align: center;
+        &::before{
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 93%;
+            height: 100%;
+            background: linear-gradient($orange 50%, $light 0);
+            background-size: 100% 200%;
+            background-position-y: 0%;
+            z-index: -1;
+            box-sizing: border-box;
+            transform: translate3d(0, 0, 0) skewX(-15deg) translateX(-50%);
+            transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        &:hover::before{
+            background-position-y: 100%;
+        }
+    }
+    &__button{
+        @extend %button-xl;
+        color: $light;
+        position: relative;
+        padding: 0 3.2rem;
+        height: 8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        text-align: center;
+        &::before{
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            width: 93%;
+            height: 100%;
+            background: linear-gradient( $light 50%, $black 0);
+            background-size: 100% 200%;
+            background-position-y: 100%;
+            border: 1px solid $orange;
+            z-index: -1;
+            box-sizing: border-box;
+            transform: translate3d(0, 0, 0) skewX(-15deg) translateX(-50%);
+            transition: 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        &:hover{
+            color: $black;
+            &::before{
+                background-position-y: 0;
+            }
+            svg path{
+                fill: $black;
+            }
+        }
+        &.copied{
+            &::before{
+                border-width: 5px;
+            }
+            
+        }
+        &-span{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1.1rem;
+        }
+    }
+}
+
+@media (max-width: 968px) {
+    .book{
+        &__wrap{
+            padding: 6rem 0;
+            flex-direction: column;
+            align-items: center;
+            gap: 4.8rem;
+        }
+        &__header, &__subheader{
+            font-size: 3rem;
+        }
+        &__subheader{
+            margin-bottom: 4.8rem;
+        }
+        &__right{
+            width: 100%;
+            min-height: 57.2rem;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .book{
+        &__tg{
+            font-size: 2.4rem;
+        }
+        &__button{
+            font-size: 2.4rem;
+        }
+    }
+}

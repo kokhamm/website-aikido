@@ -109,6 +109,8 @@ export function initPreloader() {
                             opacity: 0,
                             duration: 0,
                         }); // No changes
+                        let preloaderRight = document.querySelector('.preloader__right') as HTMLElement;
+                        preloaderRight.style.top = '40%';
                     };
                     
 
